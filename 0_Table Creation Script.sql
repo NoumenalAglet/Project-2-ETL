@@ -63,11 +63,11 @@ ALTER TABLE IF EXISTS public.airports
 
 CREATE TABLE IF NOT EXISTS public.city
 (
-    id bigint,
     city text COLLATE pg_catalog."default",
     lat double precision,
     lng double precision,
-    state_code text COLLATE pg_catalog."default"
+    state_code text COLLATE pg_catalog."default",
+    population bigint
 )
 
 TABLESPACE pg_default;
@@ -129,4 +129,29 @@ CREATE TABLE IF NOT EXISTS public.states
 TABLESPACE pg_default;
 
 ALTER TABLE IF EXISTS public.states
+    OWNER to postgres;
+	
+-- Table: public.flights
+
+-- DROP TABLE IF EXISTS public.flights;
+
+CREATE TABLE IF NOT EXISTS public.flights
+(
+    "flight_Date" text COLLATE pg_catalog."default",
+    departure_iata text COLLATE pg_catalog."default",
+    dept_terminal text COLLATE pg_catalog."default",
+    dept_gate text COLLATE pg_catalog."default",
+    delay double precision,
+    arr_iata text COLLATE pg_catalog."default",
+    arr_terminal text COLLATE pg_catalog."default",
+    arr_gate text COLLATE pg_catalog."default",
+    arr_baggage text COLLATE pg_catalog."default",
+    airline text COLLATE pg_catalog."default",
+    airline_iata text COLLATE pg_catalog."default",
+    flight_iata text COLLATE pg_catalog."default"
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.flights
     OWNER to postgres;
