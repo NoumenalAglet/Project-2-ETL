@@ -1,0 +1,12 @@
+**Dependencies and requirements**
+BeautifulSoup (bs4)
+pandas
+calendar
+requests
+sqlalchemy 
+configparser
+json
+
+A SQL database (e.g., PGAdmin)
+A Jupyter Notebook reader
+Flightlab API key
